@@ -1,10 +1,13 @@
 const bcrypt = require("bcrypt");
 const validateEmail = (email) => {
-  console.log("email validator ran");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 };
 
 const validatePassword = (password) => {
-  console.log("password validator ran");
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  return passwordRegex.test(password);
 };
 
 async function PasswordHash(next) {
@@ -22,4 +25,19 @@ async function PasswordHash(next) {
   }
 }
 
-module.exports = { validateEmail, validatePassword, PasswordHash };
+async function comparePassword(reqPass, dbPass) {
+  try {
+    const isMatch = await bcrypt.compare(reqPass, dbPass);
+    return isMatch;
+  } catch (error) {
+    console.error("Error comparing passwords:", error);
+    throw error;
+  }
+}
+
+module.exports = {
+  validateEmail,
+  validatePassword,
+  PasswordHash,
+  comparePassword,
+};

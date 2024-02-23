@@ -1,13 +1,13 @@
-const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const { PasswordHash } = require("../utils/someUtils");
 const Schema = mongoose.Schema;
-const adminModel = Schema({
+const adminSchema = Schema({
   name: {
     type: String,
     required: true,
   },
   email: {
+    unique: true,
     type: String,
     required: true,
   },
@@ -15,6 +15,12 @@ const adminModel = Schema({
     type: String,
     required: true,
   },
+  sellerApprovals: [],
+  productApprovals: [],
 });
 
-adminModel.pre("save", PasswordHash);
+adminSchema.pre("save", async function (next) {
+  await PasswordHash.call(this, next);
+});
+
+module.exports = mongoose.model("Admin", adminSchema);
