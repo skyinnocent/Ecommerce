@@ -28,24 +28,24 @@ payload:{
 name:"",
 email:"",
 password:"",
-}
+}  
 --> signinAdmin: method: GET route: http://localhost:<your.port>/api/v1/admin
 payload:{
 email:"",
 password:"",
-}
+}  
 --> updatePassword: method: PUT route: http://localhost:<your.port>/api/v1/admin/:id
 payload:{
 email:"",
 oldPassword:"",
 newPassword:"",
-}
+}  
 --> delteAdmin: mthod: DEL route: http://localhost:<your.port>/api/v1/admin/:id
 
 # note to self: in the FE remember to implement a signin again to delete so that the password gets rechecked. However make the page as if it a password check and not a signin.
 
---> approveSeller:
-note: If I can have a array of sellers requesting approval. Any time a seller signups the admin (assuming there is one admin). will receive a request. Meaning the admin must have a approval array as well which rill ref the seller. On the admin dashboard we can have the selleersapproval request array populated. From there admin can approve the seller. As the id of the seller will be available since we are reffering it when seller data is created in DB
---> suspendSeller:
---> suspendCustomer:
+--> approveSeller:  
+note: If I can have a array of sellers requesting approval. Any time a seller signups the admin (assuming there is one admin). will receive a request. Meaning the admin must have a approval array as well which rill ref the seller. On the admin dashboard we can have the selleersapproval request array populated. From there admin can approve the seller. As the id of the seller will be available since we are reffering it when seller data is created in DB  
+--> suspendSeller:  
+--> suspendCustomer:  
 --> getStats note: {This route will get the stats such as Active seller, Active listing, Active Products, total Customers, total Products in cart, total products in transit, total order processed and total money earned}
