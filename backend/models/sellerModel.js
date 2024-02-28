@@ -20,6 +20,13 @@ const sellerSchema = Schema({
     enum: ["active", "suspended", "pending", "delete-requested"],
     default: "pending",
   },
+  product: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Product",
+      required: true,
+    },
+  ],
 });
 
 sellerSchema.pre("save", async function (next) {

@@ -97,6 +97,20 @@ const sellerController = {
       console.error(error);
     }
   },
+  getMyProducts: async (req, res, next) => {
+    const _id = req.params.id;
+    try {
+      const myProducts = await Seller.findById(_id).populate("product");
+      const { product } = myProducts;
+      if (!myProducts) {
+        res.status(400).json({ message: "something went wrong" });
+      }
+      res.status(200).json(product);
+    } catch (error) {
+      console.error(error);
+      res.status(400).json({ message: "something went wrong" });
+    }
+  },
   // implement functionalities like update list product and list update product
 };
 
