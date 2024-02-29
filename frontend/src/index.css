@@ -12,7 +12,7 @@
   height: 100vh;
   text-align: center;
   margin: auto;
-  border: 5px solid red;
+  /* border: 5px solid red; */
 }
 :root {
   /* =================== THEME COLORS ============================== */
