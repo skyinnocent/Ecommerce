@@ -24,6 +24,7 @@ nav ul a {
 }
 nav ul a:hover {
   color: rgb(0, 97, 15);
+  box-shadow: 2px 2px 0px 1px rgb(255, 68, 0);
 }
 .hamburger {
   display: none;

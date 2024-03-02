@@ -32,3 +32,12 @@
   color: var(--dark-text);
   background-color: var(--dark-background);
 }
+/* BOX SHADOW */
+/* box-shadow: 13px 16px 0px 1px rgba(0, 0, 0, 1); */
+.shadow:hover {
+  border: 1px solid black;
+  box-shadow: 8px 8px 0px 1px rgba(0, 0, 0, 1);
+}
+.shadow {
+  box-shadow: none;
+}

@@ -14,8 +14,8 @@ const {
 router
   .route("/api/v1/admin")
   .post(adminController.signupAdmin)
-  .get(adminController.signinAdmin)
   .put(adminController.updatePassword);
+router.route("/api/v1/admin/signin").post(adminController.signinAdmin);
 router.route("/api/v1/admin/:id").delete(adminController.delteAdmin);
 // gets all sellers and segerates them as per status
 router.route("/api/v1/admin/sellers").get(adminController.getSellerStatuses);

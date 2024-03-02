@@ -18,11 +18,17 @@ const adminController = {
         res
           .status(404)
           .json({ message: "email or password did not match defined pattern" });
+        return;
       }
 
       newAdmin = await Admin.create({ name, email, password });
+
+      if (newAdmin) {
+        res.status(201).json(newAdmin);
+      }
     } catch (error) {
-      console.error(error);
+      // if there is duplicate then this runs
+      console.error("Error in signup admin", error);
       if (error.code === 11000) {
         res.status(409).json({ message: "Admin exists with same email" });
         return;
@@ -30,10 +36,10 @@ const adminController = {
       res.status(400).json({ message: "Something went wrong" });
       return;
     }
-    res.status(201).json(newAdmin);
   },
   signinAdmin: async (req, res, next) => {
     const { email, password } = req.body;
+    console.log(email, password);
     try {
       const admin = await Admin.findOne({ email: email });
       if (!admin) {
@@ -179,13 +185,13 @@ const adminController = {
     console.log(req.body);
   },
   getStats: async (req, res, next) => {
+    console.log(req.body);
     // total active customer
     // total active sellers
     // total active orders
     // total returns
     // total transaction in rupees
     // total orders in transit
-    console.log(req.body);
   },
 };
 

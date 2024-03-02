@@ -1,0 +1,168 @@
+.admin-dashboard-main-container {
+  height: 100%;
+  width: 100%;
+  /* border: 2px solid brown; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top-container {
+  height: 45%;
+  width: 90%;
+  /* border: 1px solid grey; */
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+}
+.bottom-container {
+  height: 50%;
+  width: 90%;
+  border: 1px solid grey;
+  margin: 2px;
+}
+.right,
+.left {
+  height: 95%;
+  width: 45%;
+  /* border: 2px solid tomato; */
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+@media (max-width: 450px) {
+  .top-container {
+    flex-direction: column;
+  }
+  .right,
+  .left {
+    height: 45%;
+    width: 95%;
+    /* border: 2px solid tomato; */
+    margin: 5px;
+  }
+  .top-cards {
+    box-shadow: 2px 2px 0px 0.5px rgb(0, 0, 0);
+  }
+}
+@media (max-width: 768px) {
+  .top-container {
+    flex-direction: column;
+  }
+  .right,
+  .left {
+    height: 45%;
+    width: 95%;
+    /* border: 2px solid tomato; */
+    margin: 5px;
+  }
+  .top-cards {
+    font-size: small;
+    box-shadow: 2px 2px 0px 0.5px rgb(0, 0, 0);
+  }
+}
+/* .right .top-cards { */
+/* color: rgb(10, 79, 10); */
+/* border: 2px solid orangered; */
+/* } */
+.top-cards {
+  width: 95%;
+  height: 25%;
+  border-top: 2px solid rgb(255, 153, 0);
+  border-left: 2px solid rgb(255, 153, 0);
+  box-shadow: 4px 4px 0px 1px rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  justify-content: space-between;
+  /* color: rgb(255, 72, 6);
+   */
+}
+.top-cards:hover {
+  border-top: 2px solid rgb(47, 93, 1);
+  border-left: 2px solid rgb(47, 93, 1);
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 1px rgb(238, 110, 37);
+  width: 96.5%;
+  height: 26%;
+}
+.bt-nav {
+  display: flex;
+  /* border: 2px solid red; */
+  justify-content: space-around;
+  border-top: 1px solid grey;
+}
+
+.bt-nav div {
+  cursor: pointer;
+  color: rgb(255, 106, 0);
+  box-shadow: 2px 2px 0px 1px rgb(255, 65, 1);
+}
+.bt-nav div:hover {
+  color: rgb(0, 97, 15);
+}
+.bt-nav > .active,
+.bt-nav > .pending,
+.bt-nav > .delete,
+.bt-nav > .suspended {
+  color: rgb(9, 82, 9);
+  box-shadow: 2px 2px 0px 1px rgb(0, 0, 0);
+}
+
+.seller-container {
+  width: 90%;
+  height: 70%;
+  border: 1px solid red;
+  margin: auto;
+  margin-top: 2%;
+}
+.sellers-list {
+  border: 2px solid rgb(0, 0, 0);
+  height: 20%;
+  margin: 1%;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  box-shadow: 2px 2px 0px 1px rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2%;
+}
+.sellers-list button {
+  font-size: 10px;
+  /* width: 20%; */
+  /* height: 50%; */
+  /* margin: 10px; */
+  cursor: pointer;
+  background-color: green;
+}
+
+.bottom-container-top {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.bottom-container-top div {
+  background-color: rgb(255, 102, 0);
+  width: 25px;
+  height: 25px;
+  margin-top: 6px;
+  /* padding: 10px; */
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.bottom-container-top div:hover {
+  color: green;
+  font-size: 20px;
+}
+
+.small {
+  display: none;
+}
+#small {
+  height: 200%;
+  transition: height 1s ease-in;
+}
